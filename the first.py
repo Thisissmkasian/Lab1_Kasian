@@ -1,17 +1,28 @@
-def masa_boroshna(masa_piroga_kg):
-    # Розраховуємо масу яблук та тіста в пирозі
-    masa_yabluk = 0.6 * masa_piroga_kg
-    masa_tista = 0.4 * masa_piroga_kg
-    
-    # Розраховуємо масу яєць і цукру та масу борошна в тісті
-    masa_yaic_tsukor = 0.3 * masa_tista
-    masa_boroshna = 0.7 * masa_tista
-    
-    return masa_boroshna
+"""
+Задача №1 
+Мама спекла пиріг з яблуками, в якому було 60% яблук, 
+а решта - тісто. При цьому 30% тіста становили яйця і цукор, 
+решта - борошно. Вся маса пирога дорівнює m кг. Яка маса борошна в пирозі в грамах?
 
-# Задаємо масу пирога у кілограмах
-masa_piroga_kg = 1.0  # Можете ввести іншу масу, якщо потрібно
+Автор: КАСЬЯН М.А.
 
-# Викликаємо функцію та виводимо результат
-masa_boroshna_gramy = masa_boroshna(masa_piroga_kg) * 1000  # Переводимо в грами
-print("Маса борошна в пирозі: " , masa_boroshna_gramy )
+"""
+masa_piroga = float(input("Введіть масу пирога в кг: "))
+
+# Обчислення маси яблук
+apple_masa = 0.6 * masa_piroga
+
+# Обчислення маси тіста
+dough_masa = 0.4 * masa_piroga
+
+# Обчислення маси яєць і цукру
+egg_sugar_masa = 0.3 * masa_piroga
+
+# Обчислення маси борошна
+flour_masa = dough_masa - egg_sugar_masa
+
+# Перетворення маси борошна в грами
+flour_masa_grams = flour_masa * 1000
+
+# Виведення результату
+print("Маса борошна в пирозі: ",  flour_masa_grams)
