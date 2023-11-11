@@ -1,21 +1,18 @@
+input_number = int(input("Введіть п'ятизначне десяткове число: "))
 
-                 
-def stvori_nove_chyslo(number):
-    # Перетворюємо введене число у рядок для зручності обробки
-    number_str = str(number)
+# Отримання окремих цифр числа
+digit_5 = input_number % 10
+digit_4 = (input_number // 10) % 10
+digit_3 = (input_number // 100) % 10
+digit_2 = (input_number // 1000) % 10
+digit_1 = (input_number // 10000) % 10
 
-    # Обчислюємо суми за вказаними правилами
-    suma_1 = int(number_str[0]) + int(number_str[2]) + int(number_str[4])
-    suma_2 = int(number_str[1]) + int(number_str[3])
+# Обчислення сум
+sum_1 = digit_1 + digit_3 + digit_5
+sum_2 = digit_2 + digit_4
 
-    # Об'єднуємо отримані суми в одне число
-    result = int(str(suma_1) + str(suma_2))
+# Формування нового числа
+result_number = int(str(sum_1) + str(sum_2))
 
-    return result
-
-# Задаємо п'ятизначне десяткове число
-input_number = 12345  # Можна ввести інше число, якщо потрібно
-
-# Викликаємо функцію та виводимо результат
-result_number = stvori_nove_chyslo(input_number)
-print("Отримане число: " , result_number )
+# Виведення результату
+print("Нове число:", result_number)
